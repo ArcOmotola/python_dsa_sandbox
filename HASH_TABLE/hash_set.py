@@ -95,6 +95,21 @@ print("Does it contain 2?", hash_set.contains(2))
 
 # ////////////////////////////////////////////////////////////////
 
+class MyHashSetSet:
+
+  def __init__(self):
+    self.set = set()
+
+  def add(self, key):
+    self.set.add(key)
+
+  def remove(self, key):
+    if key in self.set:
+      self.set.remove(set)
+  
+  def contains(self, key):
+    return key in self.set
+
 
 
 
