@@ -56,7 +56,7 @@ class MyHashSetHashtable:
   def _hash_function(self, key):
     return key % self.size
   
-  def add(self, key):
+  def add(self, key):       #generally a constant-time operation on average. However, in the worst case, if there are many collisions and many keys are stored in the same bucket, the time complexity of the if key not in self.table[hash]: check could become O(n), where n is the number of keys in the bucket.
     hash_key = self._hash_function(key)
     if key not in self.table[hash_key]:
       self.table[hash_key].append(key)
