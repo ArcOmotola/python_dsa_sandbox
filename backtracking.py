@@ -17,7 +17,7 @@ def solve_n_queens(n):
     
     for col in range(n):
       if col in columns or (row - col) in diag1 or (row + col) in diag2:
-        continue # Skip the attacked areas
+        continue # Skip the attacked arees
       
       columns.add(col)
       diag1.add(row - col)
@@ -30,7 +30,6 @@ def solve_n_queens(n):
       diag1.remove(row - col)
       diag2.remove(row + col)
       path.pop()
-      
       
   
   results = []
