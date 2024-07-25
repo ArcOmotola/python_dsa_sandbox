@@ -231,3 +231,36 @@ print("Length = " , lenOfLongSubarr(arr, n, k))
 
 
 
+
+
+
+
+
+
+def reverseWords(self, s):
+    # Helper function to reverse a portion of the list
+    def reverse(left, right):
+        while left < right:
+            s[left], s[right] = s[right], s[left]
+            left += 1
+            right -= 1
+    
+    # Step 1: Reverse the entire list
+    reverse(0, len(s) - 1)
+    
+    # Step 2: Reverse each word in the list
+    start = 0
+    for end in range(len(s)):
+        if s[end] == ' ':
+            reverse(start, end - 1)
+            start = end + 1
+    # Reverse the last word
+    reverse(start, len(s) - 1)
+    
+    
+    
+# Example usage:
+solution = Solution()
+s = ["t","h","e"," ","s","k","y"," ","i","s"," ","b","l","u","e"]
+solution.reverseWords(s)
+print(s)  # Output: ["b","l","u","e"," ","i","s"," ","s","k","y"," ","t","h","e"]

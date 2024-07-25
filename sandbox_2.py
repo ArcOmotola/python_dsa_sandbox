@@ -155,3 +155,29 @@ print("tester>>>", t[2:5])
 seeking = set([char for char in t])
 
 print(seeking)
+
+print([4, 6, 2, 8] == [4, 6, 5, 8])
+
+print("length>>", len([[4], [2, 7], [5, 2, 7, 9], [5, 1]]))
+
+print()
+
+
+
+
+
+
+class Solution:
+    def connect(self, root: 'Optional[Node]') -> 'Optional[Node]':
+        curr, nxt = root, root.left if root else None
+        
+        while curr and nxt:
+            curr.left.next = curr.right
+            if curr.next:
+                curr.right.next = curr.next.left
+                
+            curr = curr.next
+            if not curr:
+                curr = nxt
+                nxt = curr.left
+        return root
