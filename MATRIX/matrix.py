@@ -2,25 +2,25 @@ arr = [[1,40,3,10],[4,5,6,20],[7,8,9,30]]
 
 # Row-wise Traversal
 
-def traverse_row_wise(matrix):
-  for row in range(len(matrix)):
-    for col in range(len(matrix[row])):
-      print(matrix[row][col])
+# def traverse_row_wise(matrix):
+#   for row in range(len(matrix)):
+#     for col in range(len(matrix[row])):
+#       print(matrix[row][col])
       
-traverse_row_wise(arr)
+# traverse_row_wise(arr)
 
 # Column-wise Traversal
 
 # ////////////////////////////////////////////////////////////////
 
-# def traverse_column_wise(matrix):
-#     rows, cols = len(matrix), len(matrix[0])
-#     for col in range(cols):
-#         for row in range(rows):
-#             print(matrix[row][col], end=' ')
-#         print()  # for a new line after each column
+def traverse_column_wise(matrix):
+    rows, cols = len(matrix), len(matrix[0])
+    for col in range(cols):
+        for row in range(rows):
+            print(matrix[row][col], end=' ')
+        print()  # for a new line after each column
 
-# traverse_column_wise(arr)
+traverse_column_wise(arr)
 
 
 # def traverse_column_wise(matrix):
@@ -38,17 +38,35 @@ traverse_row_wise(arr)
 
 # Diagonal Traversal
 
-def traverse_diagonal(matrix):
-    rows, cols = len(matrix), len(matrix[0])
-    for line in range(1, (rows + cols)):
-        start_col = max(0, line - rows)
-        count = min(line, (cols - start_col), rows)
-        for j in range(0, count):
-            print(matrix[min(rows, line) - j - 1][start_col + j], end=' ')
-        print()  # for a new line after each diagonal
+# def traverse_diagonal(matrix):
+#     rows, cols = len(matrix), len(matrix[0])
+#     for line in range(1, (rows + cols)):
+#         start_col = max(0, line - rows)
+#         count = min(line, (cols - start_col), rows)
+#         for j in range(0, count):
+#             print(matrix[min(rows, line) - j - 1][start_col + j], end=' ')
+#         print()  # for a new line after each diagonal
 
-traverse_diagonal(arr)
+# traverse_diagonal(arr)
 
+
+# def traverse_diagonal(matrix):
+#     rows, cols = len(matrix), len(matrix[0])
+    
+#     # There are rows + cols - 1 diagonals in total
+#     for line in range(1, rows + cols):
+#         # Calculate the starting column for the current diagonal
+#         start_col = max(0, line - rows)
+        
+#         # Calculate the number of elements in the current diagonal
+#         count = min(line, cols - start_col, rows)
+        
+#         # Traverse the current diagonal
+#         for j in range(count):
+#             print(matrix[min(rows, line) - j - 1][start_col + j], end=' ')
+        
+#         # Print a newline after each diagonal traversal
+#         print()
 
 
 # //////////////////////////////////////////////////////
@@ -121,23 +139,32 @@ vowels += vowels.upper()
 print(vowels)
 
 
-def threeSum(nums):
-    nums.sort()
-    result = []
+# def threeSum(nums):
+#     nums.sort()
+#     result = []
     
-    for i in range(len(nums)):
+#     for i in range(len(nums)):
         
-        l = i + 1
-        r = len(nums) - 1
-        while l < r:
-            sum_total = nums[i] + nums[l] + nums[r]
-            if sum_total > 0:
-                r -= 1
-            elif sum_total < 0:
-                l += 1
-            else:
-                result.append([nums[i], nums[l], nums[r]])
-    return result
+#         l = i + 1
+#         r = len(nums) - 1
+#         while l < r:
+#             sum_total = nums[i] + nums[l] + nums[r]
+#             if sum_total > 0:
+#                 r -= 1
+#             elif sum_total < 0:
+#                 l += 1
+#             else:
+#                 result.append([nums[i], nums[l], nums[r]])
+#     return result
 
 
-print(threeSum([-1,0,1,2,-1,-4]))
+# print(threeSum([-1,0,1,2,-1,-4]))
+
+print("tesdt" in "ertestjr")
+
+
+
+
+nums = [4, 5, 33, 4, 10]
+
+print("+++", sum(nums[1:3]))
