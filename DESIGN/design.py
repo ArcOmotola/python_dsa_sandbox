@@ -14,6 +14,11 @@ class Book:
     self.id = id_
     self.title = title_
     self.page = page_
-    self.last_page == last_page
+    self.last_page = last_page
+    
+    
+class Library:
+  def __init__(self, id, collection_, active_book):
+    self.collection = {id: Book()}
     
 
